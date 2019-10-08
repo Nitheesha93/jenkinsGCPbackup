@@ -1,0 +1,17 @@
+pipeline{
+    agent none
+    stages{
+        stage('node1'){
+            agent{label 'node1'}
+            steps{
+            sh label: '', script: 'mkdir node1'
+            }
+        }
+        stage('node2'){
+            agent{label 'node2'}
+            steps{
+            sh label: '', script: 'mkdir node2'
+            }
+        }
+    }
+}
