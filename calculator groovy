@@ -1,0 +1,8 @@
+node {
+    stage('git checkout'){
+        git 'https://github.com/Nitheesha93/CalculatorJavaApp.git'
+    }
+    stage('mvn validate'){
+        sh 'mvn validate'
+    }
+}    
