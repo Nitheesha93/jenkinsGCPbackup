@@ -1,0 +1,20 @@
+pipeline{
+    agent none
+    stages{
+        stage('build'){
+            agent{label 'node2'}
+            steps{
+                echo 'Building..'                  
+                sh '''                  
+                touch vvv.txt                  
+                ''' 
+            }
+        }
+        stage('build2'){
+            agent{label 'node1'}
+            steps{
+                sh 'touch bbh.txt'
+            }
+        }
+    }
+}
