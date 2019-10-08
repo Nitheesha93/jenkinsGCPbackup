@@ -1,0 +1,13 @@
+node {
+    stage ('git checkout'){
+        git 'https://github.com/Nitheesha93/maven_code.git'
+    }
+    stage ('validate'){
+        sh 'mvn validate'
+    }
+    stage ('compile'){
+        sh 'mvn compile'
+        sh 'mvn test'
+        sh 'mvn package'
+    }
+}
